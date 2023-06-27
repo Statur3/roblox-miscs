@@ -1,5 +1,3 @@
-getgenv().scriptversion = "1.5.2"
-
 if getgenv().scriptversion == nil then
 	getgenv().scriptversion = "1.0.0"
 end
